@@ -4,7 +4,6 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const { check, validationResult } = require("express-validator");
-
 const User = require("../models/User");
 
 //@route     POST api/users
@@ -37,7 +36,7 @@ router.post(
 
       if (user) {
         return res.status(400).json({ msg: 'User already exists' });
-      }
+      };
 
       user = new User({
         name: name,
@@ -48,7 +47,6 @@ router.post(
       //Hashing the password using bcrypt, 10 is the level of security
       const salt = await bcrypt.genSalt(10);
       user.password = await bcrypt.hash(password, salt);
-
       await user.save();
 
       const payload = {

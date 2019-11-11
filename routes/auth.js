@@ -5,7 +5,6 @@ const bcrypt = require('bcryptjs');
 const config = require('config');
 const auth = require('../middleware/auth');
 const { check, validationResult } = require("express-validator");
-
 const User = require("../models/User");
 
 //@route     GET api/auth
@@ -69,7 +68,7 @@ async (req,res) => {
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
-  }
+  };
 });
 
 module.exports = router;
