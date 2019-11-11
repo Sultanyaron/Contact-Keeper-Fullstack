@@ -10,7 +10,6 @@
 /client/build
 /client/node_modules
 
-/config/**/*.json
 
 # misc
 .DS_Store
@@ -18,8 +17,6 @@
 /client/.env.development.local
 /client/.env.test.local
 /client/.env.production.local
-/config/*.json
-
 
 npm-debug.log*
 yarn-debug.log*
